@@ -70,7 +70,7 @@ title: About me
 
 <div class="flex items-center gap-14">
 
-<img src="/somto.jpg" alt="Somto Muotoe" onerror="this.remove()" class="w-64 h-64 rounded-full object-cover shrink-0 border-4 border-emerald-500/60" />
+<img :src="'/somto.jpg'" alt="Somto Muotoe" onerror="this.remove()" class="w-64 h-64 rounded-full object-cover shrink-0 border-4 border-emerald-500/60" />
 
 <div>
 
