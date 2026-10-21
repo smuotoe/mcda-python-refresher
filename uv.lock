@@ -7,6 +7,6 @@ resolution-markers = [
 ]
 
 [[package]]
-name = "modern-python-refresher"
+name = "mcda-python-refresher"
 version = "0.1.0"
 source = { virtual = "." }

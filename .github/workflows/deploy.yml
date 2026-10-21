@@ -29,7 +29,7 @@ jobs:
         working-directory: slides
 
       - name: Build slides
-        run: npm run build -- --base /modern-python-refresher/
+        run: npm run build -- --base /mcda-python-refresher/
         working-directory: slides
 
       - uses: actions/upload-pages-artifact@v3

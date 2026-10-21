@@ -29,8 +29,8 @@ Last resort, if you already have Python: `python -m pip install uv`, then use `p
 ## 2. Get the exercises
 
 ```bash
-git clone https://github.com/smuotoe/modern-python-refresher
-cd modern-python-refresher
+git clone https://github.com/smuotoe/mcda-python-refresher
+cd mcda-python-refresher
 uv sync
 ```
 
