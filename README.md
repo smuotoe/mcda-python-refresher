@@ -72,7 +72,7 @@ It checks whether packages exist on PyPI. Use it before installing a package an 
 
 | I want to... | Command |
 |---|---|
-| Start a project | `uv init my-app` |
+| Start a project (creates `main.py`) | `uv init --no-package my-app` |
 | Add or remove a dependency | `uv add httpx` / `uv remove httpx` |
 | Add a development-only tool | `uv add --dev ruff` |
 | Run code in the project environment | `uv run main.py` |

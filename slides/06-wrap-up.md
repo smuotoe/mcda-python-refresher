@@ -73,7 +73,7 @@ layout: default
 
 <div class="mt-8 px-4 py-3 rounded border-l-4 border-teal-500 bg-teal-500/10">
 <div class="font-bold">Today's exercises and slides</div>
-<a href="https://github.com/smuotoe/modern-python-refresher" class="inline-block font-mono text-sm">github.com/smuotoe/modern-python-refresher</a>
+<a href="https://github.com/smuotoe/mcda-python-refresher" class="inline-block font-mono text-sm">github.com/smuotoe/mcda-python-refresher</a>
 </div>
 
 <!--
@@ -97,12 +97,12 @@ class: text-center
 
 <div class="text-xl mt-10 text-teal-400">See you in January.</div>
 
-<div class="mt-8 text-sm opacity-70 font-mono">github.com/smuotoe/modern-python-refresher</div>
+<div class="mt-8 text-sm opacity-70 font-mono">github.com/smuotoe/mcda-python-refresher</div>
 
 </div>
 
 <!--
 [1:29-1:30] Thank them. Take questions.
 
-- Remind them: finish the exercises, keep uv installed, and bring a uv project to the first class in January.
+- Remind them: finish the exercises and keep uv installed. See you in January.
 -->

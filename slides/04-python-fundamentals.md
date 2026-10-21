@@ -9,8 +9,8 @@ layout: default
 <div class="col-span-3">
 
 ```bash
-git clone https://github.com/smuotoe/modern-python-refresher
-cd modern-python-refresher
+git clone https://github.com/smuotoe/mcda-python-refresher
+cd mcda-python-refresher
 uv sync
 uv run exercises/functions.py
 ```
@@ -114,9 +114,7 @@ layout: default
 
 # Pitfall: mutable default arguments
 
-<div class="grid grid-cols-2 gap-5 mt-2">
-
-<div>
+<div class="mt-2" style="--slidev-code-font-size: 17px; --slidev-code-line-height: 28px;">
 
 ```python
 def add_tag(tag: str, tags: list[str] = []) -> list[str]:
@@ -129,21 +127,19 @@ add_tag("b")  # ['a', 'b']  the default list is shared!
 
 </div>
 
-<div class="space-y-3">
+<div class="grid grid-cols-2 gap-4 mt-4">
 
-<div class="px-3 py-2 rounded border-l-4 border-red-500 bg-red-500/10 text-sm">
+<div class="px-4 py-3 rounded border-l-4 border-red-500 bg-red-500/10">
 <b>Why:</b> the default <code>[]</code> is created once, when <code>def</code> runs. Every call that uses the default gets the <i>same</i> list.
 </div>
 
-<div class="px-3 py-2 rounded border-l-4 border-emerald-500 bg-emerald-500/10 text-sm">
+<div class="px-4 py-3 rounded border-l-4 border-emerald-500 bg-emerald-500/10">
 <b>Fix:</b> default to <code>None</code>, and create a new list inside the function.
 </div>
 
-<div class="text-sm opacity-70">Linters catch this: Ruff reports it as rule <code>B006</code>.</div>
-
 </div>
 
-</div>
+<div class="mt-4 text-sm opacity-70">Linters catch this: Ruff reports it as rule <code>B006</code>.</div>
 
 <div class="sources">
 Sources: <a href="https://docs.python.org/3/faq/programming.html#why-are-default-values-shared-between-objects">Python FAQ: why are default values shared between objects?</a> · <a href="https://docs.astral.sh/ruff/rules/mutable-argument-default/">Ruff rule B006</a>
@@ -175,12 +171,12 @@ layout: default
 <li>strip <code>-</code> from both ends</li>
 <li>no accent handling</li>
 </ul>
-<div class="font-mono text-xs opacity-80 mt-2">"Hello, World!" -> hello-world</div>
+<div class="font-mono text-xs opacity-80 mt-2">slugify("Hello, World!")<br/>-> "hello-world"</div>
 </div>
 
 <div class="px-3 py-2 rounded border border-orange-500/30 bg-orange-500/5">
 <div class="font-bold text-orange-400 font-mono text-sm">add_tag(tag, tags=[])</div>
-<ul class="text-sm mt-2">
+<ul class="nowrap text-sm mt-2">
 <li>run the file first</li>
 <li>the second call returns <code>['python', 'uv']</code> instead of <code>['uv']</code></li>
 <li>fix the mutable default</li>
@@ -194,7 +190,7 @@ layout: default
 <li>the last chunk may be shorter</li>
 <li><code>ValueError</code> if <code>size</code> &lt; 1</li>
 </ul>
-<div class="font-mono text-xs opacity-80 mt-2">[1, 2, 3, 4, 5], 2 -> [[1, 2], [3, 4], [5]]</div>
+<div class="font-mono text-xs opacity-80 mt-2">chunk([1, 2, 3, 4, 5], 2)<br/>-> [[1, 2], [3, 4], [5]]</div>
 </div>
 
 </div>
@@ -208,7 +204,7 @@ layout: default
 <!--
 [0:48-0:56] Exercise 1.
 
-- slugify hint: the `re` module, `re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")`. Let them find it; give the hint after 3 minutes.
+- slugify hint: the `re` module, `re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")`. Let them find it; give the hint after 3 minutes.
 - add_tag: the expected output is ['python'] then ['uv']. Fix with `tags: list[str] | None = None` and build a new list.
 - chunk: `[items[i:i + size] for i in range(0, len(items), size)]`, after the size check.
 - The `[T]` after `chunk` is the Python 3.12 generic syntax: the output list holds the same type as the input.
@@ -259,7 +255,7 @@ def apply_discount(price: float, percent: float) -> float:
 </div>
 
 <div class="sources">
-Sources: <a href="https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings">Google Python Style Guide 3.8</a> · <a href="https://python.langchain.com/docs/how_to/custom_tools/">LangChain: custom tools</a> · <a href="https://github.com/modelcontextprotocol/python-sdk">MCP Python SDK</a>
+Sources: <a href="https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings">Google Python Style Guide 3.8</a> · <a href="https://docs.langchain.com/oss/python/langchain/tools">LangChain: tools</a> · <a href="https://modelcontextprotocol.io/docs/develop/build-server">MCP: build a server</a>
 </div>
 
 <!--
@@ -267,7 +263,7 @@ Sources: <a href="https://google.github.io/styleguide/pyguide.html#38-comments-a
 
 - `help(apply_discount)` in a REPL, or hover in VS Code: that's the docstring.
 - AI assistants read docstrings and type hints to understand what your code should do.
-- LangChain's @tool and MCP's FastMCP turn a Python function into a tool an LLM can call: the name, the docstring (description) and the type hints (input schema) are all the model sees.
+- LangChain's @tool: "By default, the function's docstring becomes the tool's description" and type hints define the input schema (parse_docstring=True also reads Google-style Args). MCP's Python SDK (MCPServer, formerly FastMCP) "uses Python type hints and docstrings to automatically generate tool definitions". The model only sees the name, description and schema, so the docstring is the model's documentation.
 - Google style: one-line summary, blank line, then Args / Returns / Raises sections. Describe meaning and constraints, not the types (the hints already say that).
 -->
 

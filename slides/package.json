@@ -1,12 +1,12 @@
 {
-  "name": "modern-python-refresher-slides",
+  "name": "mcda-python-refresher-slides",
   "version": "1.0.0",
   "description": "Modern Python: uv, Clean Code, and Coding with AI - Slidev presentation",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build",
     "export": "slidev export",
-    "export-pdf": "slidev export --format pdf --dark --scale 2 --output ../exports/modern-python-refresher-dark.pdf"
+    "export-pdf": "slidev export --format pdf --dark --scale 2 --output ../exports/mcda-python-refresher-dark.pdf"
   },
   "dependencies": {
     "@slidev/cli": "^0.48.0",

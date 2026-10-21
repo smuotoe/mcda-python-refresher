@@ -13,6 +13,27 @@
   color: inherit;
 }
 
+/* No ligatures in code: students must see ">=" and "--", not single glyphs. */
+code,
+pre,
+.font-mono,
+.slidev-code,
+.shiki {
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
+}
+
+/* The theme pads table cells generously; command tables need tighter rows. */
+.slidev-layout table th,
+.slidev-layout table td {
+  padding: 0.3rem 0.75rem;
+}
+
+.slidev-layout table.compact th,
+.slidev-layout table.compact td {
+  padding: 0.2rem 0.5rem;
+}
+
 /* Inline code inside tables and cards: keep it compact and on one line. */
 .slidev-layout td code,
 .slidev-layout .nowrap code {

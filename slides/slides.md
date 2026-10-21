@@ -23,7 +23,7 @@ class: text-center
 
 <h1 class="!text-5xl font-bold tracking-tight !leading-tight text-white">Modern Python</h1>
 
-<p class="!text-2xl text-white !mt-1">uv, Clean Code, and Coding with AI</p>
+<p class="!text-2xl text-white !mt-1 !opacity-90">uv, Clean Code, and Coding with AI</p>
 
 <p class="text-lg opacity-80 !mt-4 text-white">A hands-on refresher</p>
 
@@ -32,7 +32,7 @@ class: text-center
   <div class="text-sm opacity-70 text-white">October 2026</div>
 </div>
 
-<div class="mt-8 text-sm opacity-80 text-white font-mono">github.com/smuotoe/modern-python-refresher</div>
+<div class="mt-8 text-sm opacity-80 text-white font-mono">github.com/smuotoe/mcda-python-refresher</div>
 
 </div>
 
