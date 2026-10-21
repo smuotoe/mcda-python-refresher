@@ -1,0 +1,7 @@
+[project]
+name = "modern-python-refresher"
+version = "0.1.0"
+description = "Hands-on refresher: uv, functions, docstrings, classes, and coding with AI"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []

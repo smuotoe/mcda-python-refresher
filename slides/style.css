@@ -1,0 +1,20 @@
+/* Source footnotes sit in the bottom padding of every slide. */
+.sources {
+  position: absolute;
+  left: 3.5rem;
+  right: 3.5rem;
+  bottom: 0.7rem;
+  font-size: 0.6rem;
+  line-height: 1.25;
+  opacity: 0.6;
+}
+
+.sources a {
+  color: inherit;
+}
+
+/* Inline code inside tables and cards: keep it compact and on one line. */
+.slidev-layout td code,
+.slidev-layout .nowrap code {
+  white-space: nowrap;
+}
