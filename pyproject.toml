@@ -1,7 +1,26 @@
 [project]
 name = "mcda-python-refresher"
 version = "0.1.0"
-description = "Hands-on refresher: uv, functions, docstrings, classes, and coding with AI"
+description = "Hands-on refresher: uv, readable Python, and coding with AI agents"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []
+
+[tool.ruff]
+# The slides' code blocks are wrapped by hand to fit on screen.
+extend-exclude = ["slides"]
+
+[tool.ruff.lint]
+# Defaults (E, F) plus import sorting, bug patterns, modern syntax and docstrings.
+select = ["E", "F", "I", "B", "UP", "D"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.pyright]
+# VS Code (Pylance) reads this, so type errors show as red squiggles.
+typeCheckingMode = "basic"
+
+[tool.ty.src]
+# Scripts with inline dependencies (PEP 723) run in their own environments.
+exclude = ["demos/pypi_check.py", "demos/race.py"]

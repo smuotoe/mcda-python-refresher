@@ -53,34 +53,47 @@ Sources: <a href="https://docs.astral.sh/uv/getting-started/installation/">docs.
 </div>
 
 <!--
-[0:00-0:05] Students install while you set up. Walk the room.
+[Before 0:00] Students install while they arrive. Walk the room.
 
 - Windows: winget first. Students struggled with the ExecutionPolicy installer last time, so it is only the fallback.
 - winget may ask to accept source agreements: type Y. If winget is missing, App Installer from the Microsoft Store provides it.
 - Why a NEW terminal: the installer changes PATH, and terminals that were already open don't see the change.
 - Last resort: `python -m pip install uv` works anywhere Python exists; then `python -m uv ...` replaces `uv ...`.
-- git is only needed to clone the exercises at 0:40. Download ZIP works too.
+- git is only needed to clone the exercises at 0:28. Download ZIP works too.
 - Success = everyone sees a version number (current release: 0.13.x).
 -->
 
 ---
 layout: center
-class: text-center
+title: About me
 ---
 
-<div class="text-sm uppercase tracking-[0.3em] opacity-60 mb-6">About me</div>
+<div class="flex items-center gap-14">
 
-<h1 class="!text-6xl font-bold">Hi, I'm Somto</h1>
+<img src="/somto.jpg" alt="Somto Muotoe" onerror="this.remove()" class="w-64 h-64 rounded-full object-cover shrink-0 border-4 border-emerald-500/60" />
 
-<div class="text-2xl opacity-80 mt-6">Somto Muotoe</div>
+<div>
+
+<div class="text-sm uppercase tracking-[0.3em] opacity-60 mb-3">About me</div>
+
+<h1 class="!text-6xl font-bold !mb-0">Hi, I'm Somto</h1>
+
+<div class="mt-6 text-2xl font-bold text-emerald-400">Senior ML Engineer</div>
+
+<div class="text-xl opacity-80 mt-1">Agentic AI risk and compliance</div>
+
+<div class="mt-8 text-lg opacity-80">In my spare time: cycling and chess</div>
+
+</div>
+
+</div>
 
 <!--
-[0:05-0:06] Add two lines about yourself.
+[0:00-0:01] Keep it short.
 
-- (line 1)
-- (line 2)
-
-This is our only session before the course starts in January.
+- Senior ML Engineer, working on risk and compliance for agentic AI: making sure AI agents do what they should, and only that.
+- That's why Part 3 matters to me: AGENTS.md, tools that check code, and verifying before you trust are the everyday version of that work.
+- Outside work: cycling and chess.
 -->
 
 ---
@@ -89,40 +102,28 @@ layout: default
 
 # Agenda
 
-<div class="grid grid-cols-3 gap-4 mt-6">
-
-<div class="bg-blue-500/10 border-l-4 border-blue-500 px-4 py-4 rounded-r">
-<div class="text-xs font-mono opacity-70">0:00 - 0:10</div>
-<div class="font-bold text-blue-400">Install + intro</div>
-<div class="text-sm opacity-70 mt-1">uv on every laptop, who is in the room</div>
-</div>
-
-<div class="bg-purple-500/10 border-l-4 border-purple-500 px-4 py-4 rounded-r">
-<div class="text-xs font-mono opacity-70">0:10 - 0:15</div>
-<div class="font-bold text-purple-400">How things have shifted</div>
-<div class="text-sm opacity-70 mt-1">Python packaging and AI coding, then and now</div>
-</div>
+<div class="grid grid-cols-2 gap-4 mt-6">
 
 <div class="bg-emerald-500/10 border-l-4 border-emerald-500 px-4 py-4 rounded-r">
-<div class="text-xs font-mono opacity-70">0:15 - 0:40</div>
+<div class="text-xs font-mono opacity-70">0:05 - 0:30 · Part 1</div>
 <div class="font-bold text-emerald-400">uv</div>
-<div class="text-sm opacity-70 mt-1">Projects, dependencies, Python versions, scripts, tools</div>
+<div class="text-sm opacity-70 mt-1">Why Python packaging was a mess, and the one tool that fixed it</div>
 </div>
 
 <div class="bg-orange-500/10 border-l-4 border-orange-500 px-4 py-4 rounded-r">
-<div class="text-xs font-mono opacity-70">0:40 - 1:15</div>
-<div class="font-bold text-orange-400">Functions, docstrings, classes</div>
-<div class="text-sm opacity-70 mt-1">Hands-on: three exercises</div>
+<div class="text-xs font-mono opacity-70">0:30 - 1:00 · Part 2</div>
+<div class="font-bold text-orange-400">Code you can read</div>
+<div class="text-sm opacity-70 mt-1">Functions, type hints, docstrings and classes. Fill in code, then review an AI's</div>
 </div>
 
 <div class="bg-pink-500/10 border-l-4 border-pink-500 px-4 py-4 rounded-r">
-<div class="text-xs font-mono opacity-70">1:15 - 1:27</div>
-<div class="font-bold text-pink-400">Coding with AI</div>
-<div class="text-sm opacity-70 mt-1">Specify, generate, verify, explain</div>
+<div class="text-xs font-mono opacity-70">1:00 - 1:25 · Part 3</div>
+<div class="font-bold text-pink-400">How code gets written today</div>
+<div class="text-sm opacity-70 mt-1">Ruff, type checking, and AGENTS.md: rules your AI agent follows</div>
 </div>
 
 <div class="bg-teal-500/10 border-l-4 border-teal-500 px-4 py-4 rounded-r">
-<div class="text-xs font-mono opacity-70">1:27 - 1:30</div>
+<div class="text-xs font-mono opacity-70">1:25 - 1:30</div>
 <div class="font-bold text-teal-400">Wrap-up</div>
 <div class="text-sm opacity-70 mt-1">Checklist, resources, questions</div>
 </div>
@@ -134,11 +135,11 @@ Laptops open the whole time. Setup steps, exercises and a uv cheat sheet are in 
 </div>
 
 <!--
-[0:06-0:07] The plan. Half of today is hands-on.
+[0:01-0:02] The plan. Three parts, each with something to do.
 
-- The uv block is the part I care about most: it is how I set up every project.
-- The fundamentals block is a refresher, but with today's habits: type hints, docstrings, small functions.
-- The AI block ties it together: the same habits make AI output better and easier to check.
+- Part 1 is how I set up every project now.
+- Part 2 is a refresher, aimed at reading code: AI writes most of it today, but you still review it, debug it, and answer for it.
+- Part 3 is how the pieces come together in real work: tools that check code automatically, and a file of rules that AI agents follow.
 -->
 
 ---
@@ -177,9 +178,9 @@ No wrong answers. "Whatever works" is the most honest one.
 </div>
 
 <!--
-[0:07-0:10] Two quick polls. Read the options out and count hands roughly.
+[0:02-0:05] Two quick polls. Read the options out and count hands roughly.
 
 - Environments: note the mix. Anyone already on uv can help neighbours later.
-- AI: ask who uses agents that edit files and run commands, not just chat. That sets up the next section.
+- AI: ask who uses agents that edit files and run commands, not just chat. That sets up Part 3.
 - Keep it light; this is to calibrate, not to judge.
 -->

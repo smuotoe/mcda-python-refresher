@@ -31,3 +31,6 @@ Thumbs.db
 
 # Claude Code local settings
 .claude/
+
+# Presenter photo: kept local, not published
+slides/public/somto.jpg

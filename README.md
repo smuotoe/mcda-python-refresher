@@ -1,6 +1,6 @@
 # Modern Python Refresher
 
-Hands-on materials for a 90-minute refresher on **uv**, functions, docstrings, classes, and coding with AI.
+Hands-on materials for a 90-minute refresher: **uv**, reading Python (functions, type hints, docstrings, classes), and how code gets written today with Ruff, type checking and AI agents.
 
 ## 1. Install uv
 
@@ -38,35 +38,57 @@ No git? On GitHub, click **Code > Download ZIP**, unzip it, and `cd` into the fo
 
 `uv sync` creates `.venv` from `uv.lock`, and downloads Python 3.13 if you don't have it.
 
-## 3. Exercises
+## 3. Open it in VS Code
 
-Fill in the TODOs in each file, run it, and compare the output with the expected values in the comments.
+```bash
+code .
+```
+
+`pyproject.toml` turns on basic type checking for VS Code's Python extension, so type errors show up as red squiggles.
+
+## 4. Exercises
 
 | # | File | What to do | Run |
 |---|---|---|---|
-| 1 | `exercises/functions.py` | Implement `slugify` and `chunk`; fix the bug in `add_tag` | `uv run exercises/functions.py` |
-| 2 | `exercises/docstrings.py` | Write Google-style docstrings | `uv run exercises/docstrings.py` |
-| 3 | `exercises/classes.py` | Implement the `ShoppingCart` methods | `uv run exercises/classes.py` |
-| 4 | `exercises/spec_first.py` | Build `parse_duration` with an AI assistant | `uv run exercises/spec_first.py` |
+| 1 | `exercises/gradebook.py` | Fill in `letter_grade`, `Student.add_score` and `Student.average` | `uv run exercises/gradebook.py` |
+| 2 | `exercises/review.py` | An AI wrote this file. It runs, but has three bugs: find and fix them | `uv run exercises/review.py` |
+| 3 | `starter/` | In pairs: write your own AGENTS.md and have an AI agent follow it (below) | |
 
-## 4. Coding with AI: specify, generate, verify, explain
+Exercises 1 and 2 print their results; compare them with the `# expected:` comments.
 
-1. **Specify**: the signature, type hints and docstring say exactly what the function must do.
-2. **Generate**: ask any AI assistant. Try a vague prompt first, then give it the full docstring.
-3. **Verify**: run the file, compare with the expected output, and read the code.
-4. **Explain**: walk your neighbour through every line. If you can't explain it, you don't own it yet.
+### Exercise 3: your own AGENTS.md
 
-`AGENTS.md` holds project rules that most AI coding agents read automatically.
-
-## 5. A script that brings its own dependencies
-
-`demos/pypi_check.py` lists its dependencies inside the file (PEP 723), so uv runs it in its own environment with no setup:
+Create a project next to this folder (not inside it) and copy the starter files in:
 
 ```bash
-uv run demos/pypi_check.py requests polars definitely-not-a-real-pkg
+uv init --no-package grades
+cd grades
+cp ../mcda-python-refresher/starter/* .
 ```
 
-It checks whether packages exist on PyPI. Use it before installing a package an AI suggested.
+1. Add one rule of your own to `AGENTS.md`.
+2. Ask your AI agent: *"Read scores.csv and print each student's average score and letter grade."* Using a chat tool instead? Paste `AGENTS.md` and the prompt, then run the commands yourself.
+3. Check its work: does `uv run main.py` run, with Ada at 91.67 (an A)? Is `uvx ruff check .` clean? Did it add any dependencies, and do they exist? Did it follow your rule?
+
+## 5. Demos
+
+| File | What it shows | Run |
+|---|---|---|
+| `demos/race.py` | pip and uv install the same packages at the same moment, with a live timer each. `--cold` makes both ignore their cache | `uv run demos/race.py` |
+| `demos/type_hints.py` | A function with no hints or docstring. Add them, and watch what VS Code can tell you | open it in VS Code |
+| `demos/pypi_check.py` | Checks that package names exist on PyPI. Use it before installing a package an AI suggested | `uv run demos/pypi_check.py requests polars definitely-not-a-real-pkg` |
+
+`race.py` and `pypi_check.py` list their dependencies inside the file (PEP 723), so uv runs each in its own environment with no setup.
+
+## 6. Check code the way teams do
+
+```bash
+uvx ruff check .      # lint: bug patterns, imports, docstrings
+uvx ruff format .     # format
+uvx ty check          # type check (ty is in beta)
+```
+
+The rules live in `pyproject.toml`. `exercises/review.py` and `demos/type_hints.py` fail on purpose until you fix them.
 
 ## uv cheat sheet
 

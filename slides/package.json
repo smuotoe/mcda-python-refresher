@@ -1,7 +1,7 @@
 {
   "name": "mcda-python-refresher-slides",
   "version": "1.0.0",
-  "description": "Modern Python: uv, Clean Code, and Coding with AI - Slidev presentation",
+  "description": "Modern Python: uv, Readable Code, and AI Agents - Slidev presentation",
   "scripts": {
     "dev": "slidev",
     "build": "slidev build",

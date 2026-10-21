@@ -1,11 +1,11 @@
 ---
 theme: default
-title: "Modern Python: uv, Clean Code, and Coding with AI"
+title: "Modern Python: uv, Readable Code, and AI Agents"
 info: |
-  ## Modern Python: uv, Clean Code, and Coding with AI
+  ## Modern Python: uv, Readable Code, and AI Agents
   A hands-on refresher
 author: Somto Muotoe
-keywords: python,uv,docstrings,type-hints,classes,ai-coding
+keywords: python,uv,ruff,type-hints,docstrings,classes,agents-md
 colorSchema: dark
 drawings:
   persist: false
@@ -23,7 +23,7 @@ class: text-center
 
 <h1 class="!text-5xl font-bold tracking-tight !leading-tight text-white">Modern Python</h1>
 
-<p class="!text-2xl text-white !mt-1 !opacity-90">uv, Clean Code, and Coding with AI</p>
+<p class="!text-2xl text-white !mt-1 !opacity-90">uv, Readable Code, and AI Agents</p>
 
 <p class="text-lg opacity-80 !mt-4 text-white">A hands-on refresher</p>
 
@@ -47,21 +47,17 @@ src: ./01-opening.md
 ---
 
 ---
-src: ./02-how-things-shifted.md
+src: ./02-uv.md
 ---
 
 ---
-src: ./03-uv.md
+src: ./03-readable-code.md
 ---
 
 ---
-src: ./04-python-fundamentals.md
+src: ./04-coding-today.md
 ---
 
 ---
-src: ./05-coding-with-ai.md
----
-
----
-src: ./06-wrap-up.md
+src: ./05-wrap-up.md
 ---
