@@ -261,7 +261,7 @@ cp ../mcda-python-refresher/starter/* .
 <div class="space-y-1">
 <div><code>uv run main.py</code>: does it run? Ada's average is 91.67, an A</div>
 <div><code>uvx ruff check .</code>: clean?</div>
-<div><code>pyproject.toml</code>: any new dependencies? Do they exist?</div>
+<div><code>pyproject.toml</code>: any new dependencies? Did it ask first?</div>
 <div>Your own rule: followed?</div>
 <div>Could you explain every line to your partner?</div>
 </div>
@@ -306,8 +306,7 @@ layout: default
 
 <div class="px-3 py-2 rounded border border-pink-500/30 bg-pink-500/5">
 <div class="font-bold text-pink-400 mb-1">Check new packages exist</div>
-<div class="text-sm">AIs sometimes invent package names, and attackers register them ("slopsquatting"). One study found made-up packages in 5.2% to 21.7% of AI code samples.</div>
-<div class="font-mono text-xs mt-1">uv run demos/pypi_check.py some-package</div>
+<div class="text-sm">AIs sometimes invent package names, and attackers register them ("slopsquatting"). One study found made-up packages in 5.2% to 21.7% of AI code samples. Look it up on pypi.org before <code>uv add</code>: its age, downloads, and linked repo.</div>
 </div>
 
 <div class="px-3 py-2 rounded border border-sky-500/30 bg-sky-500/5">
@@ -326,6 +325,6 @@ Sources: Spracklen et al., <a href="https://www.usenix.org/conference/usenixsecu
 
 - Known answers: the cheapest test there is. Exercise 2's expected comments were exactly this.
 - Read it: the tools cleared two of three bugs in the demo; the third needed a human.
-- Package hallucination: the paper tested 16 models on 576,000 generated code samples; hallucinated packages appeared in at least 5.2% (commercial models) and 21.7% (open-source models) of cases, 205,474 unique fake names. "Slopsquatting" is credited to Seth Larson (PSF). Demo: `uv run demos/pypi_check.py requests polars definitely-not-a-real-pkg`.
+- Package hallucination: the paper tested 16 models on 576,000 generated code samples; hallucinated packages appeared in at least 5.2% (commercial models) and 21.7% (open-source models) of cases, 205,474 unique fake names. "Slopsquatting" is credited to Seth Larson (PSF). Show pypi.org/project/requests next to a search for a made-up name: no page means do not install.
 - Secrets: .env plus .gitignore; the starter AGENTS.md already tells the agent to read secrets from environment variables. Public chat tools may keep what you paste; use the tools your employer or school approves for private code.
 -->

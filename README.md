@@ -68,7 +68,7 @@ cp ../mcda-python-refresher/starter/* .
 
 1. Add one rule of your own to `AGENTS.md`.
 2. Ask your AI agent: *"Read scores.csv and print each student's average score and letter grade."* Using a chat tool instead? Paste `AGENTS.md` and the prompt, then run the commands yourself.
-3. Check its work: does `uv run main.py` run, with Ada at 91.67 (an A)? Is `uvx ruff check .` clean? Did it add any dependencies, and do they exist? Did it follow your rule?
+3. Check its work: does `uv run main.py` run, with Ada at 91.67 (an A)? Is `uvx ruff check .` clean? Did it ask before adding any dependencies? Did it follow your rule?
 
 ## 5. Demos
 
@@ -76,9 +76,9 @@ cp ../mcda-python-refresher/starter/* .
 |---|---|---|
 | `demos/race.py` | pip and uv install the same packages at the same moment, with a live timer each. `--cold` makes both ignore their cache | `uv run demos/race.py` |
 | `demos/type_hints.py` | A function with no hints or docstring. Add them, and watch what VS Code can tell you | open it in VS Code |
-| `demos/pypi_check.py` | Checks that package names exist on PyPI. Use it before installing a package an AI suggested | `uv run demos/pypi_check.py requests polars definitely-not-a-real-pkg` |
+| `demos/banner.py` | A script that brings its own dependencies: `uv run` installs pyfiglet and rich, then prints a banner | `uv run demos/banner.py "Hello, class"` |
 
-`race.py` and `pypi_check.py` list their dependencies inside the file (PEP 723), so uv runs each in its own environment with no setup.
+`race.py` and `banner.py` list their dependencies inside the file (PEP 723), so uv runs each in its own environment with no setup.
 
 ## 6. Check code the way teams do
 

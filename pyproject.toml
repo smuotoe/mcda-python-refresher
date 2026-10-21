@@ -23,4 +23,4 @@ typeCheckingMode = "basic"
 
 [tool.ty.src]
 # Scripts with inline dependencies (PEP 723) run in their own environments.
-exclude = ["demos/pypi_check.py", "demos/race.py"]
+exclude = ["demos/banner.py", "demos/race.py"]
